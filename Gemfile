@@ -30,6 +30,11 @@ gem 'mysql'
 #   gem 'webrat'
 # end
 
+group :development do
+  gem 'ruby-debug-base19x', '0.11.29'
+  gem 'ruby-debug-ide', '0.4.16', :require => false
+end
+
 group :test do
   gem 'shoulda', '2.10.3', :require => false
 end
