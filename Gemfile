@@ -29,3 +29,7 @@ gem 'mysql'
 # group :development, :test do
 #   gem 'webrat'
 # end
+
+group :test do
+  gem 'shoulda', '2.10.3', :require => false
+end
