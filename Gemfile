@@ -5,7 +5,9 @@ gem 'rails', '3.0.10'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql'
+gem 'mysql2', '0.2.13'
+
+gem 'rake', '0.9.2', :require => false
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -36,5 +38,6 @@ group :development do
 end
 
 group :test do
-  gem 'shoulda', '2.10.3', :require => false
+  gem 'test-unit', '2.3.2'
+  gem 'shoulda', '2.11.3', :require => false
 end

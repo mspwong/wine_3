@@ -1,17 +1,17 @@
-# MySQL.  Versions 4.1 and 5.0 are recommended.
-common: &common
-  adapter: mysql
-  host: 127.0.0.1
+development:
+  adapter: mysql2
+  encoding: utf8
+  database: wine_3_dev
+  pool: 5
   username: root
   password:
+  socket: /tmp/mysql.sock
+
+test:
+  adapter: mysql2
   encoding: utf8
+  database: wine_3_test
   pool: 5
-  timeout: 5000
-
-development:
-  <<: *common
-  database: wine_dev
-
-test: &test
-  <<: *common
-  database: wine_test
+  username: root
+  password:
+  socket: /tmp/mysql.sock
