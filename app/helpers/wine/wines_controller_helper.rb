@@ -1,0 +1,2 @@
+module Wine::WinesControllerHelper
+end

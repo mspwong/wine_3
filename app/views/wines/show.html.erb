@@ -1,0 +1,46 @@
+<% content_for :head_title do %>
+    Wine: <%=h @wine.name %>
+<% end %>
+
+<p>
+  <b>Id:</b>
+  <%=h @wine.id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @wine.name %>
+</p>
+
+<p>
+  <b>Varietal:</b>
+  <%=h @wine.varietal %>
+</p>
+
+<p>
+  <b>Vintage:</b>
+  <%=h @wine.vintage %>
+</p>
+
+<p>
+  <b>Region:</b>
+  <%=h @wine.region %>
+</p>
+
+<p>
+  <b>Item No:</b>
+  <%=h @wine.item_no %>
+</p>
+
+<!--<p>-->
+  <!--<b>Tags:</b>-->
+  <!--%=h format_tags @wine.tags %>-->
+<!--</p>-->
+
+
+<%= link_to 'Edit', edit_wine_path(@wine) %> |
+<!--
+%= link_to 'All Reviews', wine_reviews_path(@wine) %> |
+%= link_to 'Active Reviews', wine_reviews_path(@wine, :active_only_reviews => true) %> |
+-->
+<%= link_to '>> Wines', wines_path %>
