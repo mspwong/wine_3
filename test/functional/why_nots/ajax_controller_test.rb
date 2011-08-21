@@ -1,4 +1,5 @@
 require 'test_helper'
+require 'json'
 
 class WhyNots::AjaxControllerTest < ActionController::TestCase
 
@@ -12,8 +13,8 @@ class WhyNots::AjaxControllerTest < ActionController::TestCase
     assert_response :success
     assert_not_nil @response.body
     assert_equal 200, @response.status
-    #json = JSON.parse(@response.body)
-    #assert json
+    json = JSON.parse(@response.body)
+    assert_equal 2, json.size
   end
 
   test "should get Not Acceptable response when Get wines with wrong response type" do
@@ -26,6 +27,8 @@ class WhyNots::AjaxControllerTest < ActionController::TestCase
     get :get_wine, {:id => 613896708, :format => :json}
     assert_response :success
     assert_equal 200, @response.status
+    json = JSON.parse(@response.body)
+    assert_equal "Veramonte Primus", json["wine"]["name"]
   end
 
   test "should get No Content when Get wine of unknown id" do
