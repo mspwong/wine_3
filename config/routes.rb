@@ -16,6 +16,10 @@ Wine3::Application.routes.draw do
     resources :reviews
   end
 
+  resources :users do
+    resources :reviews
+  end
+
   # Sample resource route with options:
   #   resources :products do
   #     member do
