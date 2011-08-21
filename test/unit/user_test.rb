@@ -9,7 +9,7 @@ class UserTest < ActiveSupport::TestCase
 
   should_have_many :reviews
   should_have_many :wines
-  #should_have_and_belong_to_many :programs
+  should_have_and_belong_to_many :programs
 
   context "Validating a valid user" do
     should "validate" do
@@ -56,13 +56,13 @@ class UserTest < ActiveSupport::TestCase
     end
   end
 
-  #context "Given a user" do
-  #  should "be able to navigate to the programs it belongs to" do
-  #    assert_equal 2, @user.programs.size
-  #
-  #    parker = users(:parker)
-  #    assert_equal 0, parker.programs.size
-  #  end
-  #end
+  context "Given a user" do
+    should "be able to navigate to the programs it belongs to" do
+      assert_equal 2, @user.programs.size
+
+      parker = users(:parker)
+      assert_equal 0, parker.programs.size
+    end
+  end
 
 end

@@ -13,7 +13,7 @@
 class User < ActiveRecord::Base
   has_many :reviews, :foreign_key => "reviewer_id", :conditions => {:active => true}
   has_many :wines, :through => :reviews
-  #has_and_belongs_to_many :programs
+  has_and_belongs_to_many :programs
 
   validates_presence_of :name
   validates_length_of :name, :maximum => 50
