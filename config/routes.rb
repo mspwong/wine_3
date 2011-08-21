@@ -18,6 +18,9 @@ Wine3::Application.routes.draw do
 
   resources :users do
     resources :reviews
+    member do
+      get "activate"
+    end
   end
 
   # Sample resource route with options:

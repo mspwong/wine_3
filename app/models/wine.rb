@@ -10,6 +10,7 @@
 #  item_no    :integer(4)      not null
 #  created_at :datetime        not null
 #  updated_at :datetime        not null
+#  active     :boolean(1)      default(TRUE)
 #
 
 class Wine < ActiveRecord::Base
@@ -29,12 +30,12 @@ class Wine < ActiveRecord::Base
   accepts_nested_attributes_for :tags, :allow_destroy => true,
                                 :reject_if => proc { |attrs| attrs.all? { |k, v| v.blank? }}
 
-  #after_update :update_associations
+  after_update :update_associations
 
-  #def update_associations
-  #  reviews.each do |r|
-  #    r.update_attribute(:active, active)
-  #    r.save!
-  #  end
-  #end
+  def update_associations
+    reviews.each do |r|
+      r.update_attribute(:active, active)
+      r.save!
+    end
+  end
 end

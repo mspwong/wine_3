@@ -25,30 +25,30 @@ class UserTest < ActiveSupport::TestCase
     end
   end
 
-  #context "Finding user's reviews" do
-  #  should "exclude reviews that are inactive" do
-  #    assert @user.reviews.first.active
-  #
-  #    assert_difference '@user.reviews.size', -1 do
-  #      @user.reviews.first.update_attribute(:active, false)
-  #    end
-  #  end
-  #end
-  #
-  #context "Updating user" do
-  #  should "synchronize its reviews status" do
-  #    setup do
-  #      assert @user.active
-  #      @user.reviews.each { |r| assert r.active }
-  #    end
-  #
-  #    assert_no_difference '@user.reviews.size' do
-  #      @user.update_attribute(:active, false)
-  #    end
-  #    assert !@user.active
-  #    @user.reviews.each { |r| assert !r.active }
-  #  end
-  #end
+  context "Finding user's reviews" do
+    should "exclude reviews that are inactive" do
+      assert @user.reviews.first.active
+
+      assert_difference '@user.reviews.size', -1 do
+        @user.reviews.first.update_attribute(:active, false)
+      end
+    end
+  end
+
+  context "Updating user" do
+    should "synchronize its reviews status" do
+      setup do
+        assert @user.active
+        @user.reviews.each { |r| assert r.active }
+      end
+
+      assert_no_difference '@user.reviews.size' do
+        @user.update_attribute(:active, false)
+      end
+      assert !@user.active
+      @user.reviews.each { |r| assert !r.active }
+    end
+  end
 
   context "Given a user" do
     should "be able to navigate to the wines it reviewed" do

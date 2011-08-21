@@ -10,6 +10,7 @@
 #  item_no    :integer(4)      not null
 #  created_at :datetime        not null
 #  updated_at :datetime        not null
+#  active     :boolean(1)      default(TRUE)
 #
 
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html

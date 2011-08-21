@@ -41,16 +41,16 @@ class WineTest < ActiveSupport::TestCase
     assert_equal 2, wine.reviewers.size
   end
 
-  #test "update wine synchronizes its reviews status" do
-  #  wine = wines(:primus)
-  #  assert wine.active
-  #  wine.reviews.each { |r| assert r.active }
-  #
-  #  assert_no_difference 'wine.reviews.size' do
-  #      wine.update_attribute(:active, false)
-  #  end
-  #  assert !wine.active
-  #  wine.reviews.each { |r| assert !r.active }
-  #end
+  test "update wine synchronizes its reviews status" do
+    wine = wines(:primus)
+    assert wine.active
+    wine.reviews.each { |r| assert r.active }
+
+    assert_no_difference 'wine.reviews.size' do
+        wine.update_attribute(:active, false)
+    end
+    assert !wine.active
+    wine.reviews.each { |r| assert !r.active }
+  end
 
 end

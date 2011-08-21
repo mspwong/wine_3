@@ -7,22 +7,23 @@
 #  email      :string(255)
 #  created_at :datetime        not null
 #  updated_at :datetime        not null
+#  active     :boolean(1)      default(TRUE)
 #
 
 class User < ActiveRecord::Base
-  has_many :reviews, :foreign_key => "reviewer_id"
+  has_many :reviews, :foreign_key => "reviewer_id", :conditions => {:active => true}
   has_many :wines, :through => :reviews
   #has_and_belongs_to_many :programs
 
   validates_presence_of :name
   validates_length_of :name, :maximum => 50
 
-  #after_update :update_reviews
-  #
-  #def update_reviews
-  #  reviews.each do |r|
-  #    r.update_attribute(:active, active)
-  #  end
-  #end
+  after_update :update_reviews
+
+  def update_reviews
+    reviews.each do |r|
+      r.update_attribute(:active, active)
+    end
+  end
 
 end

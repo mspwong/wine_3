@@ -2,11 +2,13 @@
 #
 # Table name: reviews
 #
-#  id         :integer(4)      not null, primary key
-#  body       :text
-#  wine_id    :integer(4)      not null
-#  created_at :datetime        not null
-#  updated_at :datetime        not null
+#  id          :integer(4)      not null, primary key
+#  reviewer_id :integer(4)      not null
+#  body        :text
+#  wine_id     :integer(4)      not null
+#  created_at  :datetime        not null
+#  updated_at  :datetime        not null
+#  active      :boolean(1)      default(TRUE)
 #
 
 class Review < ActiveRecord::Base

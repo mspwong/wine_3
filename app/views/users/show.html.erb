@@ -13,15 +13,15 @@
   <%=h @user.email %>
 </p>
 
-<!--<p>-->
-  <!--<b>Active:</b>-->
-  <!--%=h @user.active %>-->
-<!--</p>-->
+<p>
+  <b>Active:</b>
+  <%=h @user.active %>
+</p>
 
 <p>
   <b>Reviews</b>
   <%=h @reviews_text %>
 </p>
 
-<!-- %= link_to '>> Toggle Active/Inactive', activate_user_path %> |  -->
+<%= link_to '>> Toggle Active/Inactive', activate_user_path %> |
 <%= link_to '>> Wines', wines_path %>
