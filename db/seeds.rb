@@ -17,7 +17,7 @@ tilia.varietal = "Cabernet Sauvignon"
 tilia.vintage = "2009"
 tilia.region = "Argentina, South America"
 tilia.item_no = 105748
-#tilia.tags = [Tag.new(:name=>"big, bold, showy", :wine=>tilia)]
+tilia.tags = [Tag.new(:name=>"big, bold, showy", :wine=>tilia)]
 tilia.save!
 
 beringer = Wine.find_by_name("Beringer Private Reserve") || Wine.new(:name=>"Beringer Private Reserve")
@@ -25,5 +25,5 @@ beringer.varietal = "Cabernet Sauvignon"
 beringer.vintage = 2005
 beringer.region = "Napa Valley"
 beringer.item_no = 676787
-#beringer.tags = [Tag.new(:name=>"food friendly", :wine=>beringer)]
+beringer.tags = [Tag.new(:name=>"food friendly", :wine=>beringer)]
 beringer.save!

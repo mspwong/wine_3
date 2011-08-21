@@ -1,4 +1,4 @@
-<!--% @wine.tags.build if @wine.tags.empty? %>-->
+<% @wine.tags.build if @wine.tags.empty? %>
 <%= form_for(@wine) do |wine_form| %>
     <%= wine_form.error_messages %>
 
@@ -23,20 +23,20 @@
       <%= wine_form.text_field :item_no %>
     </p>
 
-    <!--%= wine_form.label :tags %>-->
-    <!--<div>-->
-      <!--% wine_form.fields_for :tags do |tag_form| %>-->
-          <!--<p class="my_tag">-->
-            <!--%= tag_form.text_field :name %>-->
-            <!--% unless tag_form.object.nil? || tag_form.object.new_record? %>-->
-                <!--%= tag_form.label :_destroy, 'Remove:' %>-->
-                <!--%= tag_form.check_box :_destroy %>-->
-            <!--% end %>-->
-          <!--</p>-->
-      <!--% end %>-->
-    <!--</div>-->
+    <%= wine_form.label :tags %>
+    <div>
+      <%= wine_form.fields_for :tags do |tag_form| %>
+          <p class="my_tag">
+            <%= tag_form.text_field :name %>
+            <% unless tag_form.object.nil? || tag_form.object.new_record? %>
+                <%= tag_form.label :_destroy, 'Remove:' %>
+                <%= tag_form.check_box :_destroy %>
+            <% end %>
+          </p>
+      <% end %>
+    </div>
 
-    <!--<a id="add_tag" href="#">Add Tag</a>-->
+    <a id="add_tag" href="#">Add Tag</a>
     <p>
       <%= wine_form.submit button_label %>
     </p>

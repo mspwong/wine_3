@@ -3,7 +3,7 @@ require 'test_helper'
 class WineTest < ActiveSupport::TestCase
 
   #should_have_many :reviews
-  #should_have_many :tags
+  should_have_many :tags
   #should_have_many :reviewers
 
  test "find non existing wine" do
@@ -16,26 +16,26 @@ class WineTest < ActiveSupport::TestCase
     assert wine
   end
 
-  #test "save wine with duplicate name" do
-  #  wine = Wine.new(:name => "Veramonte Primus")
-  #  assert !wine.save
-  #end
-  #
-  #test "save wine without item no" do
-  #  wine = Wine.new(:name => "Test wine")
-  #  assert !wine.save
-  #end
-  #
-  #test "save wine with non-integer item no" do
-  #  wine = Wine.new(:name => "Test wine", :item_no => "i'm not an integer")
-  #  assert !wine.save
-  #end
-  #
-  #test "save valid wine" do
-  #  wine = Wine.new(:name => "Test wine", :item_no => 12345)
-  #  assert wine.save
-  #end
-  #
+  test "save wine with duplicate name" do
+    wine = Wine.new(:name => "Veramonte Primus")
+    assert !wine.save
+  end
+
+  test "save wine without item no" do
+    wine = Wine.new(:name => "Test wine")
+    assert !wine.save
+  end
+
+  test "save wine with non-integer item no" do
+    wine = Wine.new(:name => "Test wine", :item_no => "i'm not an integer")
+    assert !wine.save
+  end
+
+  test "save valid wine" do
+    wine = Wine.new(:name => "Test wine", :item_no => 12345)
+    assert wine.save
+  end
+
   #test "find wine's reviewers'" do
   #  wine = wines(:primus)
   #  assert_equal 2, wine.reviewers.size
