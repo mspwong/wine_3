@@ -9,6 +9,11 @@ Wine3::Application.routes.draw do
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
+  match "ajax_page" => "why_nots/ajax#ajax_page", :as => :ajax_page
+  match "get_wines" => "why_nots/ajax#get_wines", :as => :get_wines
+  match "get_wine" => "why_nots/ajax#get_wine", :as => :get_wine, :via => :get
+  match "post_wine" => "why_nots/ajax#post_wine", :as => :post_wine, :via => :post
+
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
