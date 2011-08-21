@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: wines
+#
+#  id         :integer(4)      not null, primary key
+#  name       :string(255)     not null
+#  varietal   :string(255)
+#  vintage    :integer(4)
+#  region     :string(255)
+#  item_no    :integer(4)      not null
+#  created_at :datetime        not null
+#  updated_at :datetime        not null
+#
+
 class Wine < ActiveRecord::Base
   has_many :tags, :dependent => :destroy
 

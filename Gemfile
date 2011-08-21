@@ -35,6 +35,7 @@ gem 'rake', '0.9.2', :require => false
 group :development do
   gem 'ruby-debug-base19x', '0.11.29'
   gem 'ruby-debug-ide', '0.4.16', :require => false
+  gem 'annotate', '2.4.0'
 end
 
 group :test do
