@@ -2,7 +2,7 @@ require 'test_helper'
 
 class WineTest < ActiveSupport::TestCase
 
-  #should_have_many :reviews
+  should_have_many :reviews
   should_have_many :tags
   #should_have_many :reviewers
 

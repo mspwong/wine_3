@@ -14,6 +14,7 @@
 
 class Wine < ActiveRecord::Base
   has_many :tags, :dependent => :destroy
+  has_many :reviews, :dependent => :destroy
 
   validates_presence_of :name
   validates_uniqueness_of :name, :case_sensitive => false
@@ -21,7 +22,7 @@ class Wine < ActiveRecord::Base
   validates_numericality_of :vintage, :only_integer => true, :allow_blank => true
   validates_presence_of :item_no
   validates_numericality_of :item_no, :only_integer => true
-  #validates_associated :reviews
+  validates_associated :reviews
   validates_associated :tags
 
   accepts_nested_attributes_for :tags, :allow_destroy => true,

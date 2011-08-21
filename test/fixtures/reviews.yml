@@ -1,0 +1,27 @@
+# == Schema Information
+#
+# Table name: reviews
+#
+#  id         :integer(4)      not null, primary key
+#  body       :text
+#  wine_id    :integer(4)      not null
+#  created_at :datetime        not null
+#  updated_at :datetime        not null
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+review_for_primus_1:
+#  reviewer: parker
+  body: good nose
+  wine: primus
+
+review_for_primus_2:
+#  reviewer: wine_spectator
+  body: clean
+  wine: primus
+
+review_for_cabernet:
+#  reviewer: wine_spectator
+  body: long finish
+  wine: cabernet

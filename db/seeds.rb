@@ -27,3 +27,21 @@ beringer.region = "Napa Valley"
 beringer.item_no = 676787
 beringer.tags = [Tag.new(:name=>"food friendly", :wine=>beringer)]
 beringer.save!
+
+mary_review_for_tilia = Review.new
+#mary_review_for_tilia.reviewer = mary
+mary_review_for_tilia.body = "Big and bold"
+mary_review_for_tilia.wine = tilia
+mary_review_for_tilia.save!
+
+jari_review_for_tilia = Review.new
+#jari_review_for_tilia.reviewer = jari
+jari_review_for_tilia.body = "Over the top"
+jari_review_for_tilia.wine = tilia
+jari_review_for_tilia.save!
+
+jari_review_for_beringer = Review.new
+#jari_review_for_beringer.reviewer = jari
+jari_review_for_beringer.body = "Good with Italian food"
+jari_review_for_beringer.wine = beringer
+jari_review_for_beringer.save!
