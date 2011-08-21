@@ -1,0 +1,14 @@
+<h1>Review on <%= @wine.name %></h1>
+
+<!--<p>-->
+  <!--<b>Reviewer:</b>-->
+  <!--%=h @review.reviewer.name if @review.reviewer %>-->
+<!--</p>-->
+
+<p>
+  <b>Review:</b>
+  <%=h @review.body %>
+</p>
+
+<%= link_to 'Edit', edit_wine_review_path(@wine, @review) %> |
+<%= link_to '>> '+@wine.name+' Reviews', wine_reviews_path(@wine) %>

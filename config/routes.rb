@@ -12,7 +12,9 @@ Wine3::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  resources :wines #, :has_many => :reviews
+  resources :wines do
+    resources :reviews
+  end
 
   # Sample resource route with options:
   #   resources :products do
