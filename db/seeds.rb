@@ -61,3 +61,15 @@ discount.save!
 preview = Program.find_by_name("preview") || Program.new(:name=>"preview")
 preview.users << mary
 preview.save!
+
+mark = Buyer.find_by_name("mark") || Buyer.new(:name=>"mark")
+mark.save!
+
+georgia = Buyer.find_by_name("georgia") || Buyer.new(:name=>"georgia")
+georgia.save!
+
+fred = Seller.find_by_name("fred") ||  Seller.new(:name=>"fred")
+fred.save!
+
+gerard = Seller.find_by_name("gerard") ||  Seller.new(:name=>"gerard")
+gerard.save!

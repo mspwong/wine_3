@@ -11,7 +11,7 @@ class ProgramTest < ActiveSupport::TestCase
 
   context "Given a program" do
     should "be able to navigate to its members" do
-      assert_equal 1, @program.users.size
+      assert_equal 2, @program.users.size
     end
   end
 end

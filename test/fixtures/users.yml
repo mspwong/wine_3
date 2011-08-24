@@ -5,6 +5,7 @@
 #  id         :integer(4)      not null, primary key
 #  name       :string(255)     not null
 #  email      :string(255)
+#  type       :string(255)     default("User")
 #  created_at :datetime        not null
 #  updated_at :datetime        not null
 #  active     :boolean(1)      default(TRUE)
@@ -15,8 +16,33 @@
 parker:
  name: Robert Parker
  email: rparker@abc.com
+ type: User
 
 wine_spectator:
  name: Wine Spectator
  email: spectator@abc.com
  programs: discount, preview
+ type: User
+
+mark:
+  name: Mark
+  email: mark@abc.com
+  type: Buyer
+
+georgia:
+  name: Georgia
+  email: georgia@abc.com
+  programs: discount
+  type: Buyer
+
+fred:
+  name: Fred
+  email: fred@abc.com
+  type: Seller
+
+gerard:
+  name: Gerard
+  email: gerard@abc.com
+  programs: perview
+  type: Seller
+

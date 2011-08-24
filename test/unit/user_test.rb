@@ -65,4 +65,33 @@ class UserTest < ActiveSupport::TestCase
     end
   end
 
+  context "Active records mapping of inheritance hierarchy:  " do
+    context "looking up users" do
+      should "return users" do
+        assert_equal 6, User.all.size
+        assert_equal "User", User.find_by_name("Robert Parker").class.to_s
+        assert_equal "Buyer", User.find_by_name("mark").class.to_s
+        assert_equal "Seller", User.find_by_name("fred").class.to_s
+      end
+    end
+
+    context "looking up buyers" do
+      should "return buyers" do
+        assert_equal 2, Buyer.all.size
+        assert_equal "Buyer", User.find_by_name("mark").class.to_s
+        assert_equal "Buyer", Buyer.find_by_name("mark").class.to_s
+        assert_nil Seller.find_by_name("mark")
+      end
+    end
+
+    context "looking up sellers" do
+      should "return sellers" do
+        assert_equal 2, Seller.all.size
+        assert_equal "Seller", User.find_by_name("fred").class.to_s
+        assert_equal "Seller", Seller.find_by_name("fred").class.to_s
+        assert_nil Buyer.find_by_name("fred")
+      end
+    end
+  end
+
 end

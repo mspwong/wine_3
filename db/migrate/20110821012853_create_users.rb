@@ -3,6 +3,7 @@ class CreateUsers < ActiveRecord::Migration
     create_table :users, :force=>true do |t|
       t.string "name", :null=>false
       t.string "email"
+      t.string "type", :default=>"User"
       t.timestamps :null=>false
     end
   end
