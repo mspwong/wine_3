@@ -18,7 +18,6 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html { render :html => @user }
       format.xml  { render :xml => @user }
-      format.json { render :json => @user.to_json }
     end
   end
 
@@ -27,7 +26,10 @@ class UsersController < ApplicationController
     active = @user.active
     @user.update_attribute(:active, !active)
 
-    redirect_to user_url(:id => params[:id])
+    respond_to do |format|
+      format.html { redirect_to user_url(:id => params[:id]) }
+      format.json { render :json => @user.to_json }
+    end
   end
 
   private
