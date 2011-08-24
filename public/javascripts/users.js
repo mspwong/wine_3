@@ -14,8 +14,8 @@ users = (function() {
         }
     });
 
-    pubInterface.toggle_active = function(elem) {
-        var $elem = $(elem);
+    var toggle_active = function(e) {
+        var $elem = $(this);
         var user_id = $elem.parent().siblings(".user_id").html();
         var $active = $elem.parent().siblings(".active");
 
@@ -35,6 +35,12 @@ users = (function() {
         });
     };
 
+    pubInterface.init = function(){
+        $(".toggle").click(toggle_active);
+    }
+
     return pubInterface;
 
 })();
+
+$(users.init);
