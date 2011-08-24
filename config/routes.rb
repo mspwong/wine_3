@@ -21,7 +21,7 @@ Wine3::Application.routes.draw do
     resources :reviews
   end
 
-  resources :users do
+  resources :users, :buyers, :sellers do
     resources :reviews
     member do
       get "activate"

@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
 
-  before_filter :find_user, :only => [:index, :show, :new, :create, :edit, :update, :destroy, :activate]
+  before_filter :find_user, :only => [:show, :activate]
+
+  def index
+    #@users = User.all(:conditions => {:type => "User"})
+    @users = User.all
+  end
 
   def show
     @reviews_text = @user.reviews.inject("") do |memo, r|
@@ -9,7 +14,7 @@ class UsersController < ApplicationController
     end
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html { render :html => @user }
       format.xml  { render :xml => @user }
     end
   end
