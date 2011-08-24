@@ -12,11 +12,12 @@
 <% @users.each do |user| %>
   <tr>
     <td><%=h user.type %></td>
-    <td><%=h user.id %></td>
+    <td class="user_id"><%=h user.id %></td>
     <td><%=h user.name %></td>
     <td><%=h user.email %></td>
-    <td><%=h user.active %></td>
+    <td class="active"><%=h user.active %></td>
     <td><%= link_to 'Show', user %></td>
+    <td><%= link_to toggle_label(user), "#", :onclick=>"users.toggle_active(this);" %></td>
   </tr>
 <% end %>
 </table>

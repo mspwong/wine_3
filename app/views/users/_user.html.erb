@@ -28,5 +28,5 @@
   <%=h @reviews_text %>
 </p>
 
-<%= link_to '>> Toggle Active/Inactive', activate_user_path %> |
+<%= link_to toggle_label(@user), activate_user_path %>  |
 <%= link_to '>> Users', users_path %>

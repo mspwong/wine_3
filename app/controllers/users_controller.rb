@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  layout "users"
+
   before_filter :find_user, :only => [:show, :activate]
 
   def index
@@ -16,6 +18,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html { render :html => @user }
       format.xml  { render :xml => @user }
+      format.json { render :json => @user.to_json }
     end
   end
 
