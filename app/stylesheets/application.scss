@@ -1,0 +1,19 @@
+body {
+    background-color: lightblue;
+    h1 {
+        background-color: pink;
+        width: 40%;
+    }
+    table {
+        background-color: pink;
+        tr:nth-child(even) {
+            background-color: white;
+        }
+        tr:nth-child(odd) {
+            background-color: lightgray;
+        }
+    }
+    p#notice {
+        color: green;
+    }
+}

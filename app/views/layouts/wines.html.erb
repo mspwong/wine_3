@@ -7,13 +7,13 @@
   <!--<meta http-equiv="refresh" content="3;url='http://www.google.com'">-->
   <!--<meta http-equiv="refresh" content="3">  &lt;!&ndash; refreshes same page &ndash;&gt;-->
   <title><%= yield :head_title %></title>
-  <%= stylesheet_link_tag :all %>
+  <%= stylesheet_link_tag "wine" %>
   <%= javascript_include_tag "http://code.jquery.com/jquery-1.6.2.min.js" %>
   <%= javascript_include_tag "application" %>
 </head>
-<body style="background: #eee;">
+<body>
 
-<p style="color: green"><%= notice %></p>
+<p id="notice"><%= notice %></p>
 
 <%= yield %>
 

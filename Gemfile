@@ -9,6 +9,8 @@ gem 'mysql2', '0.2.13'
 
 gem 'rake', '0.9.2', :require => false
 
+gem 'sass', '3.1.7', :require => false
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
