@@ -1,6 +1,8 @@
+@import "default";
+
 body {
     background: #eee;
     p#notice {
-        color: green;
+        @include notice;
     }
 }

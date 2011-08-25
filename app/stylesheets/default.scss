@@ -1,0 +1,5 @@
+$notice-color: green;
+
+@mixin notice {
+    color: $notice-color;
+}

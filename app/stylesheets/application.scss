@@ -1,4 +1,4 @@
-$notice-color: green;
+@import "default";
 
 body {
     background-color: lightblue;
@@ -16,5 +16,7 @@ body {
         }
     }
 
-    p#notice { color:$notice-color;}
+    p#notice {
+        @include notice;
+    }
 }
