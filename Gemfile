@@ -41,6 +41,8 @@ group :development do
 end
 
 group :test do
+  gem "rspec", '2.6.0', :require => false
+  gem "rspec-rails", '2.6.1', :require => false
   gem 'test-unit', '2.3.2'
   gem 'shoulda', '2.11.3', :require => false
 end
