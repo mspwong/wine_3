@@ -12,5 +12,4 @@
 #
 
 class Buyer < User
-
 end

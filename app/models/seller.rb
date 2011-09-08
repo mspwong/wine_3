@@ -12,5 +12,4 @@
 #
 
 class Seller < User
-
 end
