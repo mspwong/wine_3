@@ -2,10 +2,10 @@ require 'test_helper'
 
 class ReviewTest < ActiveSupport::TestCase
 
-  should_belong_to :wine
-  should_belong_to :reviewer
-  should_validate_presence_of :wine
-  should_validate_presence_of :reviewer
+  #should_belong_to :wine
+  #should_belong_to :reviewer
+  #should_validate_presence_of :wine
+  #should_validate_presence_of :reviewer
 
   context "Saving a new review" do
     context "without a body" do

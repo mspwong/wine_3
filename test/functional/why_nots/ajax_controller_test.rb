@@ -28,7 +28,9 @@ class WhyNots::AjaxControllerTest < ActionController::TestCase
     assert_response :success
     assert_equal 200, @response.status
     json = JSON.parse(@response.body)
-    assert_equal "Veramonte Primus", json["wine"]["name"]
+    assert_equal "Veramonte Primus", json["name"]
+    #wine = Wine.find(613896708)
+    #json.compare_by_identity
   end
 
   test "should get No Content when Get wine of unknown id" do

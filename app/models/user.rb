@@ -16,8 +16,10 @@ class User < ActiveRecord::Base
   has_many :wines, :through => :reviews
   has_and_belongs_to_many :programs
 
-  validates_presence_of :name
-  validates_length_of :name, :maximum => 50
+  validates :name, :presence => true
+  validates :name, :length => { :maximum => 50 }
+  validates_associated :reviews
+  validates_associated :wines
 
   after_update :update_reviews
 

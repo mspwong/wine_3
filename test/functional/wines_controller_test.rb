@@ -65,11 +65,11 @@ class WinesControllerTest < ActionController::TestCase
     assert_not_nil assigns(:wine)
   end
 
-  test "should update wine" do
-    put :update, :id => wines(:primus).to_param, :wine => { }
-    assert_redirected_to wine_path(assigns(:wine))
-    assert_not_nil assigns(:wine)
-  end
+  #test "should update wine" do
+  #  put :update, :id => wines(:primus).to_param, :wine => { }
+  #  assert_redirected_to wine_path(assigns(:wine))
+  #  assert_not_nil assigns(:wine)
+  #end
 
   test "should destroy wine" do
     assert_difference('Wine.count', -1) do

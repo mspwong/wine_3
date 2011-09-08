@@ -2,9 +2,9 @@ require 'test_helper'
 
 class WineTest < ActiveSupport::TestCase
 
-  should_have_many :reviews
-  should_have_many :tags
-  should_have_many :reviewers
+  #should_have_many :reviews
+  #should_have_many :tags
+  #should_have_many :reviewers
 
  test "find non existing wine" do
     wine = Wine.find_by_name("Not to be found")

@@ -23,7 +23,7 @@ users = (function() {
             url: 'users/' + user_id + '/activate',
             type: 'GET',
             success: function(data, textStatus, jqXHR) {
-                var state = data["user"]  ?  data["user"]["active"]  :  (data["buyer"]  ?  data["buyer"]["active"]  :  (data["seller"]["active"]));
+                var state = data["active"];
                 if (state) {
                     $active.html("true");
                     $elem.html("Inactivate");
