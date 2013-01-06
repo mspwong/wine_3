@@ -35,8 +35,6 @@ gem 'sass', '3.1.7', :require => false
 # end
 
 group :development do
-  gem 'ruby-debug-base19x', '0.11.29'
-  gem 'ruby-debug-ide', '0.4.16', :require => false
   gem 'annotate', '2.4.0'
 end
 
