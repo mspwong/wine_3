@@ -11,4 +11,6 @@
 
 class Tag < ActiveRecord::Base
   belongs_to :wine
+
+  scope :red, lambda { where("name like ?", '%red%') }
 end
