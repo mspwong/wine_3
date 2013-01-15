@@ -13,4 +13,6 @@ class Tag < ActiveRecord::Base
   belongs_to :wine
 
   scope :red, lambda { where("name like ?", '%red%') }
+
+  scope :to_come, lambda { where("created_at > ?", Time.zone.now) }
 end
