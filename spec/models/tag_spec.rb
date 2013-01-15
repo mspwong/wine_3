@@ -14,9 +14,9 @@ describe Tag do
 
     describe ':new' do
       it 'returns new tags' do
-        FactoryGirl.create(:tag, :red, created_at: 1.day.ago)
-        FactoryGirl.create(:tag, :red, created_at: Time.zone.now)
-        new_ones = FactoryGirl.create(:tag, :red, created_at: 1.day.from_now)
+        FactoryGirl.create(:tag, created_at: 1.day.ago)
+        FactoryGirl.create(:tag, created_at: Time.zone.now)
+        new_ones = FactoryGirl.create(:tag, created_at: 1.day.from_now)
 
         Tag.to_come.should == [new_ones]
       end
