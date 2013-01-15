@@ -27,6 +27,9 @@ class Wine < ActiveRecord::Base
   validates_associated :tags
   #validates_associated :reviewers
 
+  after_initialize :initialize_me
+  after_find { puts "#{'!'*20} after finding wine" }
+
   accepts_nested_attributes_for :tags, :allow_destroy => true,
                                 :reject_if => proc { |attrs| attrs.all? { |k, v| v.blank? }}
 
@@ -38,4 +41,20 @@ class Wine < ActiveRecord::Base
       r.save!
     end
   end
+
+  protected
+
+  def initialize_me
+    puts "#{'!'*20} after initializing wine"
+  end
+
+  def after_initialize
+    puts "#{'!'*20} after initialize method"
+  end
+
+  def after_find
+    puts "#{'!'*20} after find method"
+  end
+
+
 end
