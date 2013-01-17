@@ -2,6 +2,10 @@ class WinesController < ApplicationController
 
   before_filter :find_wine, :only => [:show, :edit, :update, :destroy]
 
+  before_filter(only: [:index, :show]) { @page_caching = true }
+  caches_page :index, :show
+  cache_sweeper :wine_sweeper
+
   # GET /wines
   # GET /wines.xml
   def index
@@ -78,7 +82,7 @@ class WinesController < ApplicationController
 
     respond_to do |format|
       if @wine.save
-        format.html { redirect_to(@wine, :notice => 'Wine was successfully created.') }
+        format.html { redirect_to @wine, :notice => 'Wine was successfully created.' }
         format.xml  { render :xml => @wine, :status => :created, :location => @wine }
       else
         format.html { render :action => "new" }
@@ -92,7 +96,7 @@ class WinesController < ApplicationController
   def update
     respond_to do |format|
       if @wine.update_attributes(params[:wine])
-        format.html { redirect_to(@wine, :notice => 'Wine was successfully updated.') }
+        format.html { redirect_to wine_url, :notice => 'Wine was successfully updated.' }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -105,9 +109,8 @@ class WinesController < ApplicationController
   # DELETE /wines/1.xml
   def destroy
     @wine.destroy
-
     respond_to do |format|
-      format.html { redirect_to(wines_url) }
+      format.html { redirect_to wines_url }
       format.xml  { head :ok }
     end
   end

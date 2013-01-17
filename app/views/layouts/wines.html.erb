@@ -13,7 +13,9 @@
 </head>
 <body>
 
-<p id="notice"><%= notice %></p>
+<% unless @page_caching %>
+  <p id="notice"><%= notice %></p>
+<% end %>
 
 <%= yield %>
 

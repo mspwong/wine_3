@@ -12,7 +12,7 @@ FactoryGirl.define do
   factory :tag do
     wine
     name 'placeholder'
-    
+
     trait(:red) { name 'full, red, robust' }
     trait(:white) { name 'delicate, white, dry' }
   end
