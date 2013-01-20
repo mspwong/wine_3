@@ -18,42 +18,4 @@ describe Wine do
     end
   end
 
-  describe "active record dynamic finders" do
-    describe "respond_to? find_by_varietal" do
-      it "returns true" do
-        Wine.respond_to?(:find_by_varietal).should be_true
-      end
-    end
-
-    describe "respond_to? find_all_by_varietal" do
-      it "returns true" do
-        Wine.respond_to?(:find_all_by_varietal).should be_true
-      end
-    end
-
-    describe "respond_to? find_last_by_varietal" do
-      it "returns true" do
-        Wine.respond_to?(:find_last_by_varietal).should be_true
-      end
-    end
-
-    describe "respond_to? find_or_initialize_by_varietal" do
-      it "returns true" do
-        Wine.respond_to?(:find_or_initialize_by_varietal).should be_true
-      end
-    end
-
-    describe "respond_to? find_or_create_by_varietal" do
-      it "returns true" do
-        Wine.respond_to?(:find_or_create_by_varietal).should be_true
-      end
-    end
-
-    describe "respond_to? get_by_varietal" do
-      it "returns false" do
-        Wine.respond_to?(:get_by_varietal).should be_false
-      end
-    end
-  end
-
 end
