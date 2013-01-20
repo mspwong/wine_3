@@ -7,7 +7,6 @@ module WhyNots
     private
 
     def greeting(param)
-      puts "!!!!!!!!!!! base greeting"
       "Hello"
     end
   end

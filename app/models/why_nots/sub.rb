@@ -4,7 +4,6 @@ module WhyNots
     private
 
     def greeting(msg)
-      puts "!!!!!!!!!!!!!! informal greeting"
       "Hey #{super}"
     end
   end
