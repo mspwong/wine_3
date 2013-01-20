@@ -5,19 +5,24 @@ module WhyNots
       block.class
     end
 
-    def straight_forward(id, stuff, block)
-      call_proc(id, stuff, block)
-    end
-
-    def surprise(id, stuff, block)
-      call_proc(id, stuff, block)
-      'not what you think'
-    end
-
-    private
-
-    def call_proc(id, stuff, block)
+    def proc_is_last(id, stuff, block)
       block.call(id, stuff)
     end
+
+    def proc_is_not_last(id, stuff, block)
+      block.call(id, stuff)
+      return 'not what you think'
+    end
+
+    def lambda_return
+      lambda { return 'lambda'}.call
+      return 'lambda_return method finished'
+    end
+
+    def proc_return
+      Proc.new { return 'proc'}.call
+      return 'proc_return method finished'
+    end
+
   end
 end
