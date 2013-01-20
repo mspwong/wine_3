@@ -1,15 +1,15 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0'
+gem 'rails',  '>= 3.2.6'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2', '0.3.7'
+gem 'mysql2'
 
-gem 'rake', '0.9.2', :require => false
+gem 'rake'
 
-gem 'sass', '3.1.7', :require => false
+gem 'sass', :require => false
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -35,13 +35,13 @@ gem 'sass', '3.1.7', :require => false
 # end
 
 group :development do
-  gem 'annotate', '2.4.0'
+  gem 'annotate'
 end
 
 group :test do
-  gem "rspec", '2.6.0', :require => false
-  gem "rspec-rails", '2.6.1', :require => false
-  gem 'test-unit', '2.3.2'
+  gem "rspec"
+  gem "rspec-rails"
+  gem 'test-unit'
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
 end

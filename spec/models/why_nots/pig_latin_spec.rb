@@ -1,7 +1,8 @@
 require "spec_helper"
-require File.dirname(__FILE__) + '/../../app/models/why_nots/pig_latin'
+require File.dirname(__FILE__) + '/../../../app/models/why_nots/pig_latin'
 
-describe "PigLatin should translate" do
+describe WhyNots::PigLatin do
+
   describe "'hello world'" do
     it "to 'ellohay orldway'" do
       WhyNots::PigLatin.translate('hello world').should == 'ellohay orldway'
