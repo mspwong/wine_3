@@ -1,15 +1,19 @@
 module WhyNots
-  class BlockProcLambda
+  class BlockProcLambdaMethodObject
 
     def what_am_i(&block)
       block.class
     end
 
-    def proc_is_last(id, stuff, block)
+    def what_kind_of_block_am_i(block)
+      block.class
+    end
+
+    def block_is_last(id, stuff, block)
       block.call(id, stuff)
     end
 
-    def proc_is_not_last(id, stuff, block)
+    def block_is_not_last(id, stuff, block)
       block.call(id, stuff)
       return 'not what you think'
     end
