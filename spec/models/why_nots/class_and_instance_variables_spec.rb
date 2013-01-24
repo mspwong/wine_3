@@ -1,7 +1,6 @@
 require "spec_helper"
 
-describe WhyNots::ClassAndInstanceVariables do
-end
+describe WhyNots::ClassAndInstanceVariables do; end
 
 describe WhyNots::Polygon do
   it 'class variables are shared across base and subclasses and takes the value assigned last' do
