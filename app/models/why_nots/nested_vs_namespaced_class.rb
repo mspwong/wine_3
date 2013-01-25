@@ -1,3 +1,13 @@
+FAVORITE_YEAR = 2013
+
+module WhyNots
+  FAVORITE_BOOK = "Purge"
+
+  def self.favorite_year
+    FAVORITE_YEAR
+  end
+end
+
 module WhyNots
   class NestedVsNamespacedClass; end       # for loading in console
 
@@ -10,6 +20,13 @@ module WhyNots
       FAVORITE_AUTHOR
     end
 
+    def self.favorite_book
+      FAVORITE_BOOK
+    end
+
+    def self.favorite_year
+      FAVORITE_YEAR
+    end
   end
 end
 
@@ -18,5 +35,13 @@ class WhyNots::NamespacedClass
 
   def self.favorite_author
     FAVORITE_AUTHOR
+  end
+
+  def self.favorite_book
+    FAVORITE_BOOK
+  end
+
+  def self.favorite_year
+    FAVORITE_YEAR
   end
 end
