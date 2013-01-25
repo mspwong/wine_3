@@ -20,6 +20,10 @@ describe WhyNots do
   it 'does not returns its ancestors constant' do
     lambda { subject.const_get(:FAVORITE_YEAR, false) }.should raise_error NameError
   end
+
+  it 'returns all its constants, including class names' do
+    subject.constants.should include(:FAVORITE_BOOK, :FAVORITE_AUTHOR, :NestedClass, :NamespacedClass, :ConstantAlwaysFound)
+  end
 end
 
 describe WhyNots::NestedClass do
@@ -54,6 +58,10 @@ describe WhyNots::NestedClass do
 
   it 'does not return the top level constant' do
     lambda { subject.class.const_get(:FAVORITE_YEAR, false) }.should raise_error NameError
+  end
+
+  it 'returns all its constants' do
+    subject.class.constants.should == [:FAVORITE_COLOR]
   end
 end
 
@@ -90,6 +98,10 @@ describe WhyNots::NamespacedClass do
   it 'does not return the top level constant' do
     lambda { subject.class.const_get(:FAVORITE_YEAR, false) }.should raise_error NameError
   end
+
+  it 'returns all its constants' do
+    subject.class.constants.should == [:FAVORITE_NUMBER]
+  end
 end
 
 describe WhyNots::ConstantAlwaysFound do
@@ -103,5 +115,9 @@ describe WhyNots::ConstantAlwaysFound do
 
   it 'finds any constant' do
     subject.class.const_get(:FOO).should == "Here I am.  Yours truly, FOO"
+  end
+
+  it 'returns all its constants' do
+    subject.class.constants.should == [:FAVORITE_DAY]
   end
 end
