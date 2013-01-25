@@ -1,5 +1,5 @@
 module WhyNots
-  class ClassAndInstanceVariables; end
+  class ClassAndInstanceVariables; end        # for loading in console
 
   class Polygon
     @@sides_class = 10

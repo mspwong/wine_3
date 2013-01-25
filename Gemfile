@@ -42,6 +42,5 @@ group :test do
   gem "rspec"
   gem "rspec-rails"
   gem 'test-unit'
-  gem 'shoulda-matchers'
   gem 'factory_girl_rails'
 end

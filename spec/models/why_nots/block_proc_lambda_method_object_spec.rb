@@ -6,7 +6,6 @@ describe WhyNots::BlockProcLambdaMethodObject do
     it 'a block is a Proc object' do
       result = subject.what_am_i {}
       result.should == Proc
-
     end
 
     it 'a proc is a Proc object' do
