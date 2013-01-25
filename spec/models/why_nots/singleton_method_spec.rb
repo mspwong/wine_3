@@ -1,8 +1,5 @@
 require 'spec_helper'
 
-describe WhyNots::SingletonMethod do
-end
-
 describe WhyNots::MyClass do
   describe 'class singleton methods' do
     it 'includes all the singleton methods' do
