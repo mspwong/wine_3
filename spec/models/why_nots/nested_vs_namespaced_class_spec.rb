@@ -22,7 +22,7 @@ describe WhyNots do
   end
 
   it 'returns all its constants, including class names' do
-    subject.constants.should include(:FAVORITE_BOOK, :FAVORITE_AUTHOR, :NestedClass, :NamespacedClass, :ConstantAlwaysFound)
+    subject.constants.should include :FAVORITE_BOOK, :FAVORITE_AUTHOR, :NestedClass, :NamespacedClass, :ConstantAlwaysFound
   end
 end
 
