@@ -74,6 +74,10 @@ describe WhyNots::NamespacedClass do
     lambda { subject.class.favorite_book }.should raise_error NameError
   end
 
+  it 'returns its own constant' do
+    subject.class.const_get(:FAVORITE_NUMBER).should == 777
+  end
+
   it 'does not return its namespacing module constant since module is not considered an ancestor' do
     lambda { subject.class.const_get(:FAVORITE_AUTHOR) }.should raise_error NameError
     lambda { subject.class.const_get(:FAVORITE_BOOK) }.should raise_error NameError
@@ -85,5 +89,19 @@ describe WhyNots::NamespacedClass do
 
   it 'does not return the top level constant' do
     lambda { subject.class.const_get(:FAVORITE_YEAR, false) }.should raise_error NameError
+  end
+end
+
+describe WhyNots::ConstantAlwaysFound do
+  it 'exposes its own FAVORITE_DAY constant' do
+    subject.class::FAVORITE_DAY.should == :saturday
+  end
+
+  it 'returns its own constant' do
+    subject.class.const_get(:FAVORITE_DAY).should == :saturday
+  end
+
+  it 'finds any constant' do
+    subject.class.const_get(:FOO).should == "Here I am.  Yours truly, FOO"
   end
 end

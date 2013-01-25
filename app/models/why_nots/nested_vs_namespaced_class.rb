@@ -45,3 +45,11 @@ class WhyNots::NamespacedClass
     FAVORITE_YEAR
   end
 end
+
+class WhyNots::ConstantAlwaysFound
+  FAVORITE_DAY = :saturday
+
+  def self.const_missing(sym)
+    "Here I am.  Yours truly, #{sym}"
+  end
+end
