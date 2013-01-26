@@ -1,6 +1,4 @@
 module WhyNots
-  class ClassAndInstanceVariables; end        # for loading in console
-
   class Polygon
     @@sides_class = 10
     def self.sides_class

@@ -9,8 +9,6 @@ module WhyNots
 end
 
 module WhyNots
-  class NestedVsNamespacedClass; end       # for loading in console
-
   FAVORITE_AUTHOR = "Sofi Oksanen"
 
   class NestedClass
