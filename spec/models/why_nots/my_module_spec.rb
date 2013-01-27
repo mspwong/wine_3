@@ -21,7 +21,15 @@ describe WhyNots::MyModule do
     subject.methods.include?(:other_module_name).should be_true
   end
 
-  it 'has the correct parent' do
+  it "has the correct class" do
+    subject.class.should == Module
+  end
+
+  it "has the correct superclass" do
+    subject.class.superclass.should == Object
+  end
+
+  it "has the correct parent" do
     subject.parent.should == WhyNots
   end
 
