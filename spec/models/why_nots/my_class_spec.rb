@@ -10,6 +10,14 @@ describe WhyNots::MyClass do
     subject.call_debug_module.should == Module
   end
 
+  it "has the correct parent" do
+    subject.class.parent.should == WhyNots
+  end
+
+  it "has the correct superclass" do
+    subject.class.superclass.should == Object
+  end
+
   it "has the correct ancestors" do
     subject.class.ancestors[0..2].should == [WhyNots::MyClass, WhyNots::MyModule, Object]
   end

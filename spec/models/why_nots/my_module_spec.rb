@@ -20,4 +20,13 @@ describe WhyNots::MyModule do
   it "has mixed in module's class method" do
     subject.methods.include?(:other_module_name).should be_true
   end
+
+  it 'has the correct parent' do
+    subject.parent.should == WhyNots
+  end
+
+  it "has the correct ancestors" do
+    subject.ancestors.should == [WhyNots::MyModule]
+  end
+
 end
