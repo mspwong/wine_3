@@ -11,6 +11,14 @@ describe WhyNots::MyClass do
   end
 
   it "has the correct class" do
+    subject.instance_of?(WhyNots::MyClass).should be_true
+  end
+
+  it "has the correct class" do
+    subject.class.instance_of?(Class).should be_true
+  end
+
+  it "has the correct class" do
     subject.class.class.should == Class
   end
 

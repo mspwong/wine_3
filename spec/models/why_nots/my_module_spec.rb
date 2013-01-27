@@ -22,6 +22,10 @@ describe WhyNots::MyModule do
   end
 
   it "has the correct class" do
+    subject.instanceof?(Module).should to_true
+  end
+
+  it "has the correct class" do
     subject.class.should == Module
   end
 
