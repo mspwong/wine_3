@@ -3,7 +3,7 @@
 
 
 //= require libs/jquery.min
-//= require why_nots
+//= require_tree .
 
 
 $(function() {
