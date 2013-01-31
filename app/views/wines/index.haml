@@ -1,0 +1,32 @@
+= content_for :head_title do
+  Wine List
+
+%h1 Wine List
+
+%table#wines
+  %tr
+    %th Id
+    %th Name
+    %th Varietal
+    %th Vintage
+    %th Region
+    %th Item No
+    %th Tags
+
+  - @wines.each do |wine|
+    %tr
+      %td= wine.id
+      %td= wine.name
+      %td= wine.varietal
+      %td= wine.vintage
+      %td= wine.region
+      %td= wine.item_no
+      %td= format_tags wine.tags
+      %td= link_to 'Show', wine
+      %td= link_to 'Edit', edit_wine_path(wine)
+      %td= link_to 'Destroy', wine, confirm: 'Are you sure?', method: :delete, style: 'color:red;'
+
+%br
+
+= link_to 'New wine', new_wine_path
+= link_to '>> Home', root_path

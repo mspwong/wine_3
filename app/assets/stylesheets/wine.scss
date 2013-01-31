@@ -1,8 +1,14 @@
 @import "default";
 
 body {
-    background: #eee;
-    p#notice {
-        @include notice;
+  background: #eee;
+  p#notice {
+      @include notice;
+  }
+
+  #wines {
+    th {
+      text-align: left;
     }
+  }
 }

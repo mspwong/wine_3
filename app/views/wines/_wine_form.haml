@@ -1,0 +1,38 @@
+- @wine.tags.build if @wine.tags.empty?
+= form_for(@wine) do |wine_form|
+  = wine_form.error_messages
+
+  %p
+    %span= wine_form.label :name
+    *
+    %span= wine_form.text_field :name
+  %p
+    %span= wine_form.label :varietal
+    %span= wine_form.text_field :varietal
+  %p
+    %span= wine_form.label :vintage
+    %span= wine_form.text_field :vintage
+  %p
+    %span= wine_form.label :region
+    %span= wine_form.text_field :region
+  %p
+    %span= wine_form.label :item_no
+    *
+    %span= wine_form.text_field :item_no
+
+  %p
+    %span= wine_form.label :tags
+    %span
+      = wine_form.fields_for :tags do |tag_form|
+        %span.my_tag
+          = tag_form.text_field :name
+          - unless tag_form.object.nil? || tag_form.object.new_record?
+            = tag_form.label :_destroy, 'Remove:'
+            = tag_form.check_box :_destroy
+
+    %a#add_tag{ href: '#'}
+      Add Tag
+
+  %p= wine_form.submit button_label
+
+
