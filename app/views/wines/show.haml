@@ -1,0 +1,39 @@
+= content_for :head_title do
+  Wine: "#{@wine.name}"
+
+%p
+  %b Id:
+  = @wine.id
+
+%p
+  %b Name:
+  = @wine.name
+
+%p
+  %b Varietal:
+  = @wine.varietal
+
+%p
+  %b Vintage:
+  = @wine.vintage
+
+%p
+  %b Region:
+  = @wine.region
+
+%p
+  %b Item No:
+  = @wine.item_no
+
+%p
+  %b Tags:
+  = format_tags @wine.tags
+
+
+= link_to 'Edit', edit_wine_path(@wine)
+|
+= link_to 'All Reviews', wine_reviews_path(@wine)
+|
+= link_to 'Active Reviews', wine_reviews_path(@wine, active_only_reviews: true)
+|
+= link_to 'Wines', wines_path

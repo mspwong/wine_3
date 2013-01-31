@@ -1,0 +1,13 @@
+!!!
+%html
+  %head
+    %title= yield :head_title
+    = stylesheet_link_tag "wine"
+    = javascript_include_tag "libs/jquery-min"
+    = javascript_include_tag "application"
+
+  - unless @page_caching  &&  Rails.application.config.action_controller.perform_caching
+    %p#notice= notice
+
+  %body
+    = yield

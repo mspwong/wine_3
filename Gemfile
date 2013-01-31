@@ -10,6 +10,7 @@ gem 'mysql2'
 gem 'rake'
 
 gem 'sass', :require => false
+gem 'haml'
 
 gem 'dynamic_form', :git => 'git://github.com/rails/dynamic_form.git'
 
