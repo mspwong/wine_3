@@ -42,8 +42,13 @@ group :development do
 end
 
 group :test do
-  gem "rspec"
-  gem "rspec-rails"
+  gem 'rspec'
+  gem 'rspec-rails'
   gem 'test-unit'
   gem 'factory_girl_rails'
+  #gem 'jasmine-headless-webkit'
+end
+
+group :development, :test do
+  gem 'jasmine'
 end

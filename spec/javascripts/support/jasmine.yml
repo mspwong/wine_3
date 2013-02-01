@@ -1,0 +1,13 @@
+src_dir: app/assets
+
+src_files:
+  - javascripts/libs/jquery.min.js
+  - javascripts/**/*.js
+
+helpers:
+  - helpers/**/*.js
+
+spec_files:
+  - '**/*[sS]pec.js'
+
+spec_dir: spec/javascripts
